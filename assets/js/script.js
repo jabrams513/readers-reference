@@ -11,6 +11,8 @@ var dictionaryQueryURL = "https://api.dictionaryapi.dev/api/v2/entries/en/" + wo
     });
 
 const apiKey = 'STo8Iixrm9DQ6x1bW1iNsgGcU4pPbQCjgvgdXi95Rj52yx1K2ZZeMaeD'
+get `https://api.pexels.com/v1/search?query=dog`
+document.getElementById("search-btn")
 
 import { createClient } from 'pexels';
 
@@ -21,7 +23,3 @@ client.photos.search({ query, per_page: 1 })
 .then(photos => {
     console.log(photos)
 });
-<<<<<<< HEAD
-=======
-
->>>>>>> 0cae16d54d072254862c765ef4ddec5592de0e2f
