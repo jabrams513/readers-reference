@@ -7,12 +7,12 @@ let buttonEl = document.querySelector("#search-btn"); //query select button
 
 function wordSearch(word) {
     var dictionaryQueryURL = "https://api.dictionaryapi.dev/api/v2/entries/en/" + word;
-    console.log(dictionaryQueryURL);
+    //console.log(dictionaryQueryURL);
     fetch(dictionaryQueryURL)
         .then((response) => {
             return response.json()
         }).then((data) => {
-            console.log(data)
+            //console.log(data)
             var phonetic = data[0].phonetic;
             //console.log(data[0].phonetic)
             var partOfSpeech = data[0].meanings[0].partOfSpeech;
