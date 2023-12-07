@@ -9,18 +9,18 @@
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css" /> 
 </head>
 
-<body class="mt-4">
-    <header>
-        <h1>
+<body>
+    <header class="container has-background-danger-light is-size-2 is-size-3-mobile p-1 has-text-centered">
+        <h1 class="mb-3 text-align-center">
             📘 Reader's Reference 📖
         </h1>
     </header>
 
-    <main class="row">
-        <div class="col-sm-3 col-md-4">
+    <main class="mt-2">
+        <div class="ml-2 sm-3 md-4 mt-5 columns">
 
-            <div>
-                <h3>Search for a Term</h3>
+            <div class="ml-2 mr-2 container has-text-centered-mobile columns is-3">
+                <h3 class="is-size-4-mobile">Search for a Term</h3>
                 <form id="term-form">
                     <input type="text" id="term-input" placeholder="Term..." />
                     <input type="text" id="source-input" placeholder="Source..." />
@@ -28,19 +28,21 @@
                 </form>
             </div>
 
-            <div class="search-history">
+            <div class="ml-2 mr-2 container has-text-centered-mobile columns is-9">
+                <div>
+                    <div>
+                        <h2 class="ml-2 mr-2">My Catalog</h2>
+                    </div>
+                    <div class="term-catalog"></div>
+                </div>
+            </div>
+
+            <div class="search-history ml-2 mr-2 container has-text-centered-mobile columns is-12">
                 <h3>Search History</h3>
             </div>
         </div>
 
-        <div class="col-sm-9 col-md-8">
-            <div>
-                <div>
-                    <h2>My Catalog</h2>
-                </div>
-                <div class="term-catalog"></div>
-            </div>
-        </div>
+        
     </main>
 
     <script src="./assets/js/script.js"></script>
