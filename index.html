@@ -1,12 +1,51 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <title>Readers Reference</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" /> 
 </head>
+
 <body>
+    <header class="container has-background-danger-light is-size-2 is-size-3-mobile p-1 has-text-centered">
+        <h1 class="mb-3 text-align-center">
+            📘 Reader's Reference 📖
+        </h1>
+    </header>
+
+    <main class="mt-2">
+        <div class="ml-2 sm-3 md-4 mt-5 columns">
+
+            <div class="ml-2 mr-2 container has-text-centered-mobile columns is-3">
+                <h3 class="is-size-4-mobile">Search for a Term</h3>
+                <form id="term-form">
+                    <input type="text" id="term-input" placeholder="Term..." />
+                    <input type="text" id="source-input" placeholder="Source..." />
+                    <button class="btn btn-primary" id="search-btn">Search</button>
+                </form>
+            </div>
+
+            <div class="ml-2 mr-2 container has-text-centered-mobile columns is-9">
+                <div>
+                    <div>
+                        <h2 class="ml-2 mr-2">My Catalog</h2>
+                    </div>
+                    <div class="term-catalog"></div>
+                </div>
+            </div>
+
+            <div class="search-history ml-2 mr-2 container has-text-centered-mobile columns is-12">
+                <h3>Search History</h3>
+            </div>
+        </div>
+
+        
+    </main>
 
     <script src="./assets/js/script.js"></script>
 </body>
+
 </html>
