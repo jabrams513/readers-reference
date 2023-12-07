@@ -1,7 +1,7 @@
 
 // https://api.dictionaryapi.dev/api/v2/entries/en/<word>
 
-var word = "dog"
+var word = 'dog' //document.querySelector("#term-input").value;
 
 var dictionaryQueryURL = "https://api.dictionaryapi.dev/api/v2/entries/en/" + word;
     fetch(dictionaryQueryURL).then((response) => {
@@ -10,16 +10,6 @@ var dictionaryQueryURL = "https://api.dictionaryapi.dev/api/v2/entries/en/" + wo
         console.log(data)
     });
 
-const apiKey = 'STo8Iixrm9DQ6x1bW1iNsgGcU4pPbQCjgvgdXi95Rj52yx1K2ZZeMaeD'
-get `https://api.pexels.com/v1/search?query=dog`
-document.getElementById("search-btn")
+const apiKey = '831783c2c912c2560933d03a2494016a2a485315dc6abe60d43bdfbfcb3ee525'
+var userWord = `https://serpapi.com/search.json?engine=google_images&q=${word}&google_domain=google.com&gl=us&hl=en&api_key=${apiKey}`
 
-import { createClient } from 'pexels';
-
-const client = createClient(apiKey);
-const query = 'dog';
-
-client.photos.search({ query, per_page: 1 })
-.then(photos => {
-    console.log(photos)
-});
