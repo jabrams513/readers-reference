@@ -18,29 +18,30 @@
     </header>
 
     <main class="mt-2">
-        <div class="ml-2 sm-3 md-4 mt-5 columns">
+        <div class="ml-4 sm-3 md-4 mt-2 columns is-flex is-flex-wrap-wrap">
 
-            <div class="ml-2 mr-2 container has-text-centered-mobile columns is-3">
+            <div class="column is-3 is-12-mobile has-text-centered-mobile">
                 <h3 class="is-size-4-mobile">Search for a Term</h3>
                 <form id="term-form">
                     <input type="text" id="term-input" placeholder="Term..." />
                     <input type="text" id="source-input" placeholder="Source..." />
-                    <button class="btn btn-primary" id="search-btn">Search</button>
+                    <button class="btn btn-primary mt-1" id="search-btn">Search</button>
+                    <div class="search-history mt-1 is-size-4-mobile">
+                        <h3>Search History</h3>
+                    </div>
                 </form>
             </div>
 
-            <div class="ml-2 mr-2 container has-text-centered-mobile columns is-9">
+            <div class="column is-8 is-12-mobile has-text-centered-mobile">
                 <div>
                     <div>
-                        <h2 class="ml-2 mr-2">My Catalog</h2>
+                        <h2 class="ml-2 is-size-4-mobile">My Catalogue</h2>
                     </div>
                     <div class="term-catalog"></div>
                 </div>
             </div>
 
-            <div class="search-history ml-2 mr-2 container has-text-centered-mobile columns is-12">
-                <h3>Search History</h3>
-            </div>
+            
         </div>
 
         
