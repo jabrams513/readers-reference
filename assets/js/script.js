@@ -4,15 +4,16 @@
 let inputEl = document.querySelector("#term-input");
 var termCatalogEl = $(".term-catalog");
 let buttonEl = document.querySelector("#search-btn"); //query select button
+let searchHistory = JSON.parse(localStorage.getItem("searchHistory")) || []
 
 function wordSearch(word) {
     var dictionaryQueryURL = "https://api.dictionaryapi.dev/api/v2/entries/en/" + word;
-    console.log(dictionaryQueryURL);
+    //console.log(dictionaryQueryURL);
     fetch(dictionaryQueryURL)
         .then((response) => {
             return response.json()
         }).then((data) => {
-            console.log(data)
+            //console.log(data)
             var phonetic = data[0].phonetic;
             //console.log(data[0].phonetic)
             var partOfSpeech = data[0].meanings[0].partOfSpeech;
@@ -24,6 +25,7 @@ function wordSearch(word) {
             var definitionEl = $("<div>").text(definition);
             var exampleEl = $("<div>").text(example);
 
+            termCatalogEl.html("")
             termCatalogEl.append(phoneticEl);
             termCatalogEl.append(partOfSpeechEl);
             termCatalogEl.append(definitionEl);
@@ -36,6 +38,23 @@ buttonEl.addEventListener("click", function(event) {
     var word = inputEl.value;
     wordSearch(word);
     console.log(word);
+    if (!searchHistory.includes(word)) {
+        searchHistory.push(word)
+    }
+    localStorage.setItem("searchHistory", JSON.stringify(searchHistory))
+    document.querySelector("#histList").innerHTML = ""
+    for (let i = 0; i < searchHistory.length; i++) {
+        let li = document.createElement("li")
+        let btn = document.createElement("button")
+        btn.textContent = searchHistory[i]
+        document.querySelector("#histList").appendChild(li)
+        li.appendChild(btn)
+        btn.addEventListener("click", function(event){
+            event.preventDefault();
+            console.log(this.textContent)
+            inputEl.value = this.textContent
+        })
+    }
 })
 // add event listener to button 
 // when button is pressed grab the value from the element you've stored in var word
