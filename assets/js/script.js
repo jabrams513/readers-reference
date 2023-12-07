@@ -21,7 +21,3 @@ client.photos.search({ query, per_page: 1 })
 .then(photos => {
     console.log(photos)
 });
-<<<<<<< HEAD
-=======
-
->>>>>>> 0cae16d54d072254862c765ef4ddec5592de0e2f
