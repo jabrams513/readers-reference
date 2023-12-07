@@ -22,4 +22,3 @@ client.photos.search({ query, per_page: 1 })
     console.log(photos)
 });
 
-
