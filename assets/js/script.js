@@ -3,6 +3,7 @@
 
 let inputEl = document.querySelector("#term-input");
 var termCatalogEl = $(".term-catalog");
+termCatalogEl.attr('class', "card");
 let buttonEl = document.querySelector("#search-btn"); //query select button
 let searchHistory = JSON.parse(localStorage.getItem("searchHistory")) || []
 
