@@ -45,3 +45,20 @@ header {
         grid-template-areas: none;
     }
 }
+
+.card {
+    padding: 5px;
+    border-radius: 30px;
+    border: dashed black;
+    background-color: hsl(347, 90%, 96%);
+    width: 15em;
+    height: auto;
+}
+
+.card div {
+    margin: 0.5em;
+}
+
+.card img {
+    border-radius: 30px;
+}
