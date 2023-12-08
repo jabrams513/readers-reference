@@ -1,3 +1,47 @@
+* {
+    font-family: 'Calligraffitti', cursive;
+}
+
 body {
-    background-color: antiquewhite;
+    background-image: url('../images/paper-background.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+input {
+    display: block;
+}
+
+header {
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+}
+
+.grids {
+    display: grid;
+    grid-template-columns: 1fr 70%;
+    grid-template-rows: 1fr 5fr;
+    grid-template-areas: 
+                    "col1 col3" 
+                    "col2 col3";
+}
+.grid {
+    width: 100%;
+}
+.grid1 {
+    grid-area: col1;
+}
+.grid3 {
+    grid-area: col2;
+}
+.grid2 {
+    grid-area: col3;
+}
+@media only screen and (max-width: 768px) {
+    .grids {
+        display: block;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: none;
+    }
 }
