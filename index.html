@@ -8,47 +8,52 @@
     <title>Readers Reference</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css" /> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Calligraffitti&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <header class="container has-background-danger-light is-size-2 is-size-3-mobile p-1 has-text-centered">
-        <h1 class="mb-3 text-align-center">
-            📘 Reader's Reference 📖
+        <h1 class="mb-3 text-align-center has-text-weight-bold">
+            <i class="fa-solid fa-book"></i> Reader's Reference <i class="fa-solid fa-book-open-reader"></i>
         </h1>
     </header>
 
-    <main class="mt-2">
-        <div class="ml-4 sm-3 md-4 mt-2 columns is-multiline is-flex is-flex-wrap-wrap">
+    <main class="mt-2 has-text-black">
+        <div class="ml-4 sm-3 md-4 mt-2 grids is-size-4">
 
-            <div class="column is-3 is-12-mobile has-text-centered-mobile">
-                <h3 class="is-size-4-mobile">Search for a Term</h3>
+            <div class="grid grid1 is-3 is-12-mobile has-text-centered-mobile">
+                <h3 class="mb-1 is-size-4-mobile has-text-weight-bold is-underlined">Search for a Term</h3>
                 <form id="term-form">
-                    <input type="text" id="term-input" placeholder="Term..." />
-                    <input type="text" id="source-input" placeholder="Source..." />
-                    <button class="btn btn-primary mt-1" id="search-btn">Search</button>
+                    <input class="is-size-5" type="text" id="term-input" placeholder="Term..." />
+                    <input class="is-size-5" type="text" id="source-input" placeholder="Source..." />
+                    <button class="btn btn-primary mt-1 mb-3 has-background-danger-light has-text-black" id="search-btn">Search</button>
                     
                 </form>
             </div>
 
-            <div class="column is-8 is-12-mobile has-text-centered-mobile">
+            <div class="grid grid2 is-9 is-12-mobile has-text-centered-mobile">
                 <div>
                     <div>
-                        <h2 class="ml-2 is-size-4-mobile">This Term</h2>
+                        <h2 class="mb-1 is-size-4-mobile has-text-weight-bold is-underlined">This Term</h2>
                     </div>
                     <div class="term-catalog"></div>
                 </div>
             </div>
-            <div class="search-history column is-3 is-size-4-mobile mt-1 has-text-centered-mobile">
-                <h3 class="mb-1">Search History</h3>
+            
+            <div class="search-history grid grid3 is-3 is-size-4-mobile has-text-centered-mobile">
+                <h3 class="mb-1 has-text-weight-bold is-underlined">Search History</h3>
                 <ul class="historyList" id="histList">
                 </ul>
             </div>
-
+            
             
         </div>
 
         
     </main>
+    <script src="https://kit.fontawesome.com/4b4d2cd4e2.js" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="./assets/js/script.js"></script>
 </body>
