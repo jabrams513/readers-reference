@@ -25,7 +25,6 @@ function wordSearch(word) {
             var definitionEl = $("<div>").text(definition);
             var exampleEl = $("<div>").text(example);
 
-            termCatalogEl.html("")
             termCatalogEl.append(phoneticEl);
             termCatalogEl.append(partOfSpeechEl);
             termCatalogEl.append(definitionEl);
@@ -34,9 +33,11 @@ function wordSearch(word) {
 };
 
 buttonEl.addEventListener("click", function(event) {
+    termCatalogEl.empty();
     event.preventDefault();
     var word = inputEl.value;
     wordSearch(word);
+    picSearch(word);
     console.log(word);
     if (!searchHistory.includes(word)) {
         searchHistory.push(word)
@@ -54,12 +55,26 @@ buttonEl.addEventListener("click", function(event) {
             console.log(this.textContent)
             inputEl.value = this.textContent
         })
-    }
+    }  
 })
-// add event listener to button 
-// when button is pressed grab the value from the element you've stored in var word
-// and then run your fetch
 
-//const apiKey = '831783c2c912c2560933d03a2494016a2a485315dc6abe60d43bdfbfcb3ee525'
+const apiKey = '831783c2c912c2560933d03a2494016a2a485315dc6abe60d43bdfbfcb3ee525'
 //var userWord = `https://serpapi.com/search.json?engine=google_images&q=${word}&google_domain=google.com&gl=us&hl=en&api_key=${apiKey}`
 
+function picSearch(word) {
+    // var apiKey = '831783c2c912c2560933d03a2494016a2a485315dc6abe60d43bdfbfcb3ee525';
+    var picQueryUrl = 'https://corsproxy.io/?' + encodeURIComponent(`https://serpapi.com/search.json?engine=google_images&q=${word}&location=Austin,+TX,+Texas,+United+States&api_key=${apiKey}`);
+    fetch(picQueryUrl)
+    .then((response) => {
+        return response.json()
+    }).then((data) => {
+        console.log(data);
+
+        var pic = data.images_results[0].thumbnail;
+        console.log(pic);
+        var picEl = $("<img>");
+
+        picEl.attr('src', pic);
+        termCatalogEl.append(picEl);
+    })
+}
