@@ -88,6 +88,7 @@ searchHistoryEl.addEventListener("click", function(event){
         var wordToSearch = valueToSearch.split(" ")[0];
         inputEl.value = wordToSearch;
         wordSearch(wordToSearch);
+        picSearch(wordToSearch);
     }
 })
 
