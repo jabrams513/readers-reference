@@ -67,3 +67,11 @@ header {
 .card img {
     border-radius: 30px;
 }
+
+.button {
+    background-color: hsl(347, 90%, 96%);
+}
+
+.btn-primary {
+    border-color: black;
+}
