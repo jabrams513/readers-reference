@@ -5,7 +5,7 @@ A collaborative project that allows users (readers) to search terms and retrieve
 Build an app to display dictionary definitions and images associated with that term to help readers gain a better understanding of the words they encounter.
 
 ## Deployed Webpage Link
-<!-- Insert link to deployed site -->
+https://jabrams513.github.io/readers-reference/
 
 ## User Story
 
@@ -33,7 +33,7 @@ THEN I am again presented with the term, the part of speech, the pronunciation, 
 
 ## Screenshot
 Please refer to the following screenshot as a reference for the web application's appearance and functionality:
-<!-- ![readers reference main page](./Assets/pic1.png) -->
+![readers reference main page](./assets/images/pic1.png)
 
 ## Code Sources and Collaborators
 I had the opportunity to collaborate with my peers Anthony, Dominik, and Gelu.
