@@ -1,14 +1,13 @@
-
-// https://api.dictionaryapi.dev/api/v2/entries/en/<word>
-
+//Global variables
 let inputEl = document.querySelector("#term-input");
 let sourceEl = document.querySelector("#source-input");
 var termCatalogEl = $(".term-catalog");
 termCatalogEl.attr('class', "card");
-let buttonEl = document.querySelector("#search-btn"); //query select button
+let buttonEl = document.querySelector("#search-btn"); 
 let searchHistory = JSON.parse(localStorage.getItem("searchHistory")) || []
 var searchHistoryEl = document.querySelector(".search-history");
 
+//Function to have search history display on page load
 function loadPge() {
     for (let i = 0; i < searchHistory.length; i++) {
         let li = document.createElement("li")
@@ -21,18 +20,17 @@ function loadPge() {
 };
 loadPge();
 
+//Function to go through dictionaryapi to pull the definition of user inputtede word 
 function wordSearch(word) {
+// if statement to ensure nothing is outputted if fields are left blank
 if (word.trim() === "") {
     } else {
         var dictionaryQueryURL = "https://api.dictionaryapi.dev/api/v2/entries/en/" + word;
-    //console.log(dictionaryQueryURL);
     fetch(dictionaryQueryURL)
         .then((response) => {
             return response.json()
         }).then((data) => {
-            //console.log(data)
             var phonetic = data[0].phonetic;
-            //console.log(data[0].phonetic)
             var partOfSpeech = data[0].meanings[0].partOfSpeech;
             var definition = data[0].meanings[0].definitions[0].definition;
             var example = data[0].meanings[0].definitions[0].example;
@@ -50,20 +48,17 @@ if (word.trim() === "") {
     }
 };
 
-
+//Event Listener for Search button
 buttonEl.addEventListener("click", function(event) {
     termCatalogEl.empty();
     event.preventDefault();
     var word = inputEl.value;
     var source = sourceEl.value;
     var btnText = (word + " " + `<i>${source}</i>`).trim();
-    // console.log(word);
     if (word != "") {
-        console.log(searchHistory.includes(btnText), btnText, searchHistory);
         
         if (!searchHistory.includes(btnText)) {
             searchHistory.push(btnText)
-            console.log(searchHistory);
             localStorage.setItem("searchHistory", JSON.stringify(searchHistory))
           
         }
@@ -75,9 +70,9 @@ buttonEl.addEventListener("click", function(event) {
     } else {
         console.log("please type a term")
     }
-    console.log(word);
 })
 
+//Event Listener for previously searched terms
 searchHistoryEl.addEventListener("click", function(event){
     event.preventDefault();
     
@@ -90,17 +85,16 @@ searchHistoryEl.addEventListener("click", function(event){
     }
 })
 
+//Image Api key
 const apiKey = '831783c2c912c2560933d03a2494016a2a485315dc6abe60d43bdfbfcb3ee525'
-//var userWord = `https://serpapi.com/search.json?engine=google_images&q=${word}&google_domain=google.com&gl=us&hl=en&api_key=${apiKey}`
 
+//Function to search image through image api
 function picSearch(word) {
-    // var apiKey = '831783c2c912c2560933d03a2494016a2a485315dc6abe60d43bdfbfcb3ee525';
     var picQueryUrl = 'https://corsproxy.io/?' + encodeURIComponent(`https://serpapi.com/search.json?engine=google_images&q=${word}&location=Austin,+TX,+Texas,+United+States&api_key=${apiKey}`);
     fetch(picQueryUrl)
     .then((response) => {
         return response.json()
     }).then((data) => {
-        console.log(data);
 
         var pic = data?.images_results[0].thumbnail;
         console.log(pic);
