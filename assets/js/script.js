@@ -14,6 +14,7 @@ function loadPge() {
         let li = document.createElement("li")
         let btn = document.createElement("button")
         btn.setAttribute("data-search", searchHistory[i]);
+        btn.setAttribute("class", "has-background-danger-light")
         btn.innerHTML = searchHistory[i]
         document.querySelector("#histList").appendChild(li)
         li.appendChild(btn)
